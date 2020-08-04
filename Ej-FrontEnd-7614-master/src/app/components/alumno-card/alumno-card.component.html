@@ -1,0 +1,92 @@
+<br>
+<br>
+<div class="container">
+    <div class="d-flex justify-content-around">
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faIdCard'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Cédula</small>
+                <p class="h6"><strong>{{alumno.cedula}}</strong></p>
+            </div>
+        </div>  
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faUser'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Nombres</small>
+                <p class="h6"><strong>{{alumno.nombres }}</strong></p>
+            </div>
+        </div>        
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faUser'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Apellidos</small>
+                <p class="h6"><strong>{{alumno.apellidos }}</strong></p>
+            </div>
+        </div>
+        
+    </div>
+<hr>
+    <div class="d-flex justify-content-around">
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faCalendar'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Fecha de nacimiento</small>
+                <p class="h6"><strong>{{alumno.fecha_nacimiento | date : 'longDate' }}</strong></p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faMapMarked'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Lugar de nacimiento</small>
+                <p class="h6"><strong>{{alumno.lugar_nacimiento}}</strong></p>
+            </div>
+        </div>        
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faGenderless'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Sexo</small>  
+                <p class="h6"><strong>{{alumno.sexo | sexdesc}}</strong></p>
+            </div>
+        </div>        
+    </div>    
+  <hr>
+  <br>
+</div>
+<div class="container">
+    <div class="row">        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Materia</th>
+            <th>Fecha</th>
+            <th>Tipo</th>
+            <th>Costo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of matriculas; let i = index">
+            <td>{{i | masmas}}</td>
+            <td>{{ item.Materia.nombre }}</td>
+            <td>{{ item.fecha | date:'dd/MMM/yyyy HH:mm' }}</td>
+            <td>{{ item.tipo }}</td>
+            <td>{{ item.costo | currency }}</td>
+        </tr>
+
+    </tbody>
+</table>
+    </div>
+
+</div>

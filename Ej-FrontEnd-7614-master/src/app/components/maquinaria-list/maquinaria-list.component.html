@@ -1,0 +1,31 @@
+<h3>Listado de maquinaria</h3>
+<table class="table table-hovered">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>% Depreciación anual</th>
+            <th>
+                <button [routerLink]="['/maquinaria/form']" class="btn btn-info" ><fa-icon [icon]="faPlus"></fa-icon>&nbsp;Agregar</button>                    
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of maquinarias; let i = index">
+            <td>{{i|masmas}}</td>
+            <td>{{item.codigo}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.precio | currency }}</td>
+            <td>{{ item.porcentaje_depreciacion }}</td>
+            <td>
+                <button [routerLink]="['/maquinaria/card', item.idmaquinaria]" class="btn btn-sm btn-info" ><fa-icon [icon]="faEye"></fa-icon></button>                    
+                <button [routerLink]="['/maquinaria/form', item.idmaquinaria]" class="btn btn-sm btn-warning" ><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                <button (click)="delete(item)" class="btn btn-sm btn-danger" ><fa-icon [icon]="faTrash"></fa-icon></button>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>

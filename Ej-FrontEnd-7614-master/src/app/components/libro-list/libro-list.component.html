@@ -1,0 +1,33 @@
+<h3>Listado de Libros</h3>
+<hr>
+
+<table class="tabe table-hovered">
+    <thead>
+        <tr>
+            <th>Nro</th>
+            <th>Nombre</th>
+            <th>Autor</th>
+            <th>Fecha de emision</th>
+            <th>Reproducciones</th>
+            <th>Precio</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of libros; let i = index">
+            <td>{{item.idlibro}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.autor}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.reproducciones | currency }}</td>
+            <td>{{item.costo | currency}}</td>
+            <td>    
+                <button [routerLink]="['/libro/card', item.idlibro]" class="btn btn-sm btn-info" ><fa-icon [icon]="faEye"></fa-icon></button>                    
+                <button [routerLink]="['/libro/form', item.idlibro]" class="btn btn-sm btn-warning" ><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                <button (click)="delete(item)" class="btn btn-sm btn-danger" ><fa-icon [icon]="faTrash"></fa-icon></button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

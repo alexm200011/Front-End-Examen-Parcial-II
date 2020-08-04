@@ -1,0 +1,30 @@
+<br><br><br>
+<h3>{{title}}</h3>
+<br><br>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="">
+<div >
+    <h3>Tipo:</h3>
+    <input formControlName="tipo" [(ngModel)]="beca.tipo" type="text" class="form-control form-control-user" /><br>
+    <h3>Beneficio:</h3>
+    <input formControlName="beneficio" [(ngModel)]="beca.beneficio" type="number" class="form-control form-control-user" /><br>
+    <h3>Presupuesto Semestral:</h3>
+    <input formControlName="presupuesto" [(ngModel)]="beca.presupuesto"  type="number" class="form-control form-control-user" /><br>
+    <h3>Número de estudiantes beneficiados por nivel</h3>
+    <input formControlName="max_est_por_nivel" [(ngModel)]="beca.max_est_por_nivel"  type="number" class="form-control form-control-user"/><br>
+    <div class="text-center">
+        <button type="submit" class="btn btn-success">Guardar</button><br><br>
+        <button type="reset" (click)="onReset()" class="btn btn-primary">Cancelar</button><br>
+    </div>
+    
+</div>
+</form>
+
+
+
+
+
+
+
+
+
+

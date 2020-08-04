@@ -1,0 +1,23 @@
+
+<br><br>
+<div class="text-center">
+    <h1>{{beca.tipo | uppercase }}</h1>
+</div>
+    
+
+<div class="container">
+    <div class="jumbotron" style="text-align: center;">
+        <h1><strong>Tipo:</strong></h1>&nbsp;
+        <h3>{{beca.tipo}}</h3><br>
+        <hr>
+        <h1><strong>Beneficio</strong></h1>&nbsp;
+        <h3>{{beca.beneficio | currency}}</h3><br>
+        <hr>
+        <h1><strong>Presupuesto</strong></h1>&nbsp;
+        <h3>{{beca.presupuesto | currency }}</h3><br>
+        <hr>
+        <h1><strong>Máximo de estudiantes beneficiados por nivel:</strong></h1>&nbsp;
+        <h3>{{beca.max_est_por_nivel}}</h3><br>
+    </div>                
+    <button [routerLink]="['/beca/list']" class="btn btn-info" ><fa-icon [icon]="faListAlt"></fa-icon>&nbsp;Volver</button>
+</div>

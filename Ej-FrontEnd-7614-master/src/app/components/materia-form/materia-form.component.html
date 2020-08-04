@@ -1,0 +1,19 @@
+<br><br><br><br>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="user">
+<fieldset>
+    <label>Nombre:</label>
+    <input formControlName="nombre" [(ngModel)]="materia.nombre" type="text"  /><br>
+    <label>NRC:</label>
+    <input formControlName="nrc" [(ngModel)]="materia.nrc" type="text" /><br>
+    <label>Créditos:</label>
+    <input formControlName="creditos" [(ngModel)]="materia.creditos"  type="number" min="2" max="10" /><br>
+    <label>Área:</label>
+    <select formControlName="idarea" [(ngModel)]="materia.idarea">        
+        <option *ngFor="let item of areas" [value]="item.idarea">{{item.nombre}}</option>
+    </select><br>
+
+    <button type="submit">Guardar</button><br>
+    <button type="reset" (click)="onReset()">Cancelar</button><br>
+
+</fieldset>
+</form>

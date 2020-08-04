@@ -1,0 +1,58 @@
+<div>
+    <div class="text-center">
+        
+        <fa-icon class="fa-2x" [icon]="faListAlt"></fa-icon>   
+        <h1>Listado de Becas</h1> 
+    </div>
+    <hr>
+    <table class="table table-hover">
+        <thead class="bg-info">
+            <tr class="text-center">
+                <th>
+                    N°
+                </th>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Beneficio
+                </th>
+                <th>
+                    Presupuesto Semestral
+                </th>          
+                <th>
+                    Estudiantes Benfeciciados por Nivel
+                </th>
+                <th>
+                    <button [routerLink]="['/beca/form','']" class="btn btn-info" ><fa-icon [icon]="faPlus"></fa-icon>&nbsp;Agregar</button> 
+        
+                </th>
+            </tr>
+        </thead>
+        <tbody>        
+                <tr *ngFor="let item of becas; let i = index" class="text-center">
+                    <td>
+                        {{i | masmas}}
+                    </td>
+                    <td>
+                        {{item.tipo}}
+                    </td>
+                    <td>
+                        {{item.beneficio}}
+                    </td>
+                    <td>
+                        {{item.presupuesto}}
+                    </td> 
+                    <td>
+                        {{item.max_est_por_nivel}}
+                    </td>               
+                    <td class="btn-group">
+                        <button [routerLink]="['/beca/card', item.idbeca]" class="btn btn-sm btn-info" ><fa-icon [icon]="faEye"></fa-icon></button>                    
+                        <button [routerLink]="['/beca/form', item.idbeca]" class="btn btn-sm btn-warning" ><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                        <button (click)="delete(item)" class="btn btn-sm btn-danger" ><fa-icon [icon]="faTrash"></fa-icon></button>
+                    </td>
+                </tr>
+            
+        </tbody>
+    </table>
+    </div>

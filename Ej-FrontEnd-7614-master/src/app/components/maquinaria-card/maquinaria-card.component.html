@@ -1,0 +1,14 @@
+<h3>{{maquinaria.nombre | uppercase }}</h3>
+<fieldset>
+    <label><strong>Nombre:</strong></label>&nbsp;
+    <span>{{maquinaria.nombre}}</span><br>
+    <label>Código:</label>&nbsp;
+    <span>{{maquinaria.codigo}}</span><br>
+    <label>Fecha de adquisición:</label>&nbsp;
+    <span>{{maquinaria.fecha_adquisicion | date:'longDate' }}</span><br>
+    <label>Precio:</label>&nbsp;
+    <span>{{maquinaria.precio | currency }}</span><br>
+    <label>Porcentaje de depreciación anual:</label>&nbsp;
+    <span>{{maquinaria.porcentaje_depreciacion}} %</span><br>
+    <button [routerLink]="['/maquinaria/list']" class="btn btn-info" ><fa-icon [icon]="faListAlt"></fa-icon>&nbsp;Volver</button>                    
+</fieldset>

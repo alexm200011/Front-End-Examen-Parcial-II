@@ -1,0 +1,17 @@
+<div class="container">
+<br>
+<div class="page-header">    
+    <h4>Alumnos <small>Operaciones CRUD-L de la entidad alumno</small></h4>
+</div>
+<hr>
+<div class="row">    
+    <app-alumno-form [alumno]="mainAlumno" [title]="mainTitle" 
+        (flagToReload)="toReload($event)">
+    </app-alumno-form>
+    <hr>    
+    <app-alumno-list (alumnoToEdit)="toUpdate($event)" 
+        [flagToReload]="mainReload" (reloadComplete)="reloadDone($event)">
+    </app-alumno-list>
+</div>
+<hr>
+</div>
